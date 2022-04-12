@@ -1,1 +1,6 @@
-/usr/bin/env java -XX:+ShowCodeDetailsInExceptionMessages @/var/folders/55/t7fh_sm10xb73z65cpzkrx3m0000gn/T/cp_6d61zc9g8i61b5i30guzrmg96.argfile br.com.sqs_sender.App
+#!/bin/bash
+export CLASSPATH=target/sqs_sender-1.0-SNAPSHOT.jar
+export className=App
+echo "## Running $className..."
+shift
+mvn exec:java -Dexec.mainClass="br.com.sqs_sender.$className"
