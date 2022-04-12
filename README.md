@@ -7,6 +7,9 @@ https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html
 ### gerar com manifest
 https://www.sohamkamani.com/java/cli-app-with-maven/
 
+# exemplo code base
+https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javav2
+
 ### mvn options
 - mvn validate: validate the project is correct and all necessary information is available
 - mvn compile: compile the source code of the project
