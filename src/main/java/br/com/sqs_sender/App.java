@@ -6,8 +6,8 @@ import br.com.sqs_sender.services.SQSService;
 
 public class App 
 {
-    public static void main( String[] args )
-    {
-		SQSService.sendMessage("Uma mensagem - " + LocalDate.now());
-    }
+  public static void main( String[] args )
+  {
+    SQSService.sendMessage("Uma mensagem - " + LocalDate.now());
+  }
 }

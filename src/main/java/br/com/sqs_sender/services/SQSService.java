@@ -26,13 +26,14 @@ public class SQSService {
         };
 
         SqsClient sqsClient = SqsClient.builder()
-                .region(Region.SA_EAST_1)
+                .region(Region.US_EAST_1)
                 .credentialsProvider(credentialsProvider)
                 .build();
 
         // ===== Busca uma Fila =====
         GetQueueUrlRequest request = GetQueueUrlRequest.builder()
-                .queueName("fila-teste-danilo")
+                .queueName("fila-danilo.fifo") // enfia para fila fifo
+                // .queueName("fila-danilo") // enfia para fila padrão
                 .queueOwnerAWSAccountId("473247640396").build();
         GetQueueUrlResponse createResult = sqsClient.getQueueUrl(request);
         
@@ -44,6 +45,7 @@ public class SQSService {
     public static void sendMessage(SqsClient sqsClient, String queueUrl, String message) {
         SendMessageRequest sendMsgRequest = SendMessageRequest.builder()
             .queueUrl(queueUrl)
+            .messageGroupId("grupo") // Para filas fifo
             .messageBody(message)
             .build();
         sqsClient.sendMessage(sendMsgRequest);
